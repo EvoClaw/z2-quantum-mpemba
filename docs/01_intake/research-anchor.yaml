@@ -1,0 +1,49 @@
+# research-anchor.yaml — Phase 0 Domain Anchoring
+# Project: Quantum One-Dimensional Models
+# Date: 2026-03-01
+
+domain: "Condensed Matter Physics / Quantum Many-Body Physics"
+subdomain: "Quantum one-dimensional models (spin chains, strongly correlated 1D systems, exactly solvable models)"
+
+research_type: "D"
+
+innovation_point: "Z2 entanglement asymmetry in TFIM and XY chain exhibits QME if and only if quench generates DQPTs — first identification of a control mechanism for Z2 QME in integrable systems, enabled by coherent quasiparticle topological dynamics absent in chaotic systems."
+
+value_proposition: "While Z2 QME is absent in chaotic (random circuit) systems [Liu et al. PRL 2024], we show it occurs in integrable systems precisely when DQPT provides coherent Bogoliubov mode crossings enabling Z2 parity switching. New critical exponent alpha and exact phase diagram verified in TFIM and XY chain. Computed exactly via Majorana covariance matrix."
+
+expert_persona: "Senior condensed matter theorist specializing in low-dimensional quantum systems and exactly solvable models"
+
+reviewer_focus:
+  - "Conservation law verification and known-system benchmarks (Bethe ansatz, CFT predictions, ED for small N)"
+  - "Finite-size scaling and thermodynamic limit extrapolation"
+  - "Physical significance: does the result reveal something non-trivial about quantum matter?"
+  - "Reproducibility: scripts, seeds, system-size sweep documented"
+  - "Comparison to existing results in literature (no overclaiming)"
+
+constraints:
+  hard:
+    - "No transformer or large neural network training (too costly and data-hungry)"
+    - "Results must be directly verifiable against exact solutions (Bethe ansatz / ED / CFT predictions)"
+    - "Computational experiments should complete within hours, not days, per run"
+  soft:
+    - "Prefer directions where server parallelism (128 CPU / 8x L20 GPU) can be leveraged efficiently"
+    - "Moderate total compute budget — no week-long sweeps"
+
+resources:
+  cpu_cores: 128
+  ram: "1 TB"
+  gpu: "8x NVIDIA L20 (46 GB each), CUDA 12.5"
+  python: "3.12.2"
+  packages_available: ["numpy", "scipy"]
+  packages_to_install: "numpy, scipy, joblib, matplotlib (all standard)"
+  compute_budget: "Low — total ~15 min on 128 CPUs"
+  submission_deadline: null
+
+target_venue: "Physical Review Letters (PRL) if SL6 analytical argument is compelling; Physical Review B (PRB) as fallback"
+
+data_status: "All data generated via simulation (no external datasets needed)"
+
+G1_status: "passed"
+G2_status: "pending_user_approval"
+
+confirmed_by_user: true

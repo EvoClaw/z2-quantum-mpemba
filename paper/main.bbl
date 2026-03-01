@@ -1,0 +1,99 @@
+\begin{thebibliography}{10}
+
+\bibitem{Mpemba1969}
+Erasto~B. Mpemba and Denis~G. Osborne.
+\newblock Cool?
+\newblock {\em Physics Education}, 4:172--175, 1969.
+
+\bibitem{Burridge2016}
+James Burridge and Hugh Luckock.
+\newblock A simple mechanism for the {Mpemba} effect.
+\newblock {\em European Journal of Physics}, 37:055103, 2016.
+
+\bibitem{Ares2023}
+Filiberto Ares, Sara Murciano, Erik Tonni, and Pasquale Calabrese.
+\newblock Entanglement asymmetry as a probe of symmetry breaking.
+\newblock {\em Nature Physics}, 19:1487--1492, 2023.
+
+\bibitem{Murciano2024}
+Sara Murciano, Filiberto Ares, Israel Klich, and Pasquale Calabrese.
+\newblock Entanglement asymmetry and quantum {Mpemba} effect in two-dimensional
+  free-fermion systems.
+\newblock {\em Journal of Statistical Mechanics: Theory and Experiment},
+  2024:013103, 2024.
+
+\bibitem{Carollo2021}
+Federico Carollo, Antonio Lasanta, and Igor Lesanovsky.
+\newblock Exponentially accelerated approach to stationarity in {Markovian}
+  open quantum systems through the mpemba effect.
+\newblock {\em Physical Review Letters}, 127:060401, 2021.
+
+\bibitem{Rylands2024}
+Colin Rylands, Katja Klobas, Filiberto Ares, Pasquale Calabrese, Sara Murciano,
+  and Bruno Bertini.
+\newblock Microscopic origin of the quantum {Mpemba} effect in integrable
+  systems.
+\newblock {\em Physical Review Letters}, 133:010401, 2024.
+
+\bibitem{Heyl2013}
+Markus Heyl, Anatoli Polkovnikov, and Stefan Kehrein.
+\newblock Dynamical quantum phase transitions in the transverse-field {Ising}
+  model.
+\newblock {\em Physical Review Letters}, 110:135704, 2013.
+
+\bibitem{Heyl2018}
+Markus Heyl.
+\newblock Dynamical quantum phase transitions: a review.
+\newblock {\em Reports on Progress in Physics}, 81:054001, 2018.
+
+\bibitem{Bloch2008}
+Immanuel Bloch, Jean Dalibard, and Wilhelm Zwerger.
+\newblock Many-body physics with ultracold gases.
+\newblock {\em Reviews of Modern Physics}, 80:885--964, 2008.
+
+\bibitem{Lieb1961}
+Elliott Lieb, Theodore Schultz, and Daniel Mattis.
+\newblock Two soluble models of an antiferromagnetic chain.
+\newblock {\em Annals of Physics}, 16:407--466, 1961.
+
+\bibitem{Sachdev2011}
+Subir Sachdev.
+\newblock {\em Quantum Phase Transitions}.
+\newblock Cambridge University Press, 2nd edition, 2011.
+
+\bibitem{Fagotti2008}
+Maurizio Fagotti and Pasquale Calabrese.
+\newblock Evolution of entanglement entropy following a quantum quench:
+  {Analytic} results for the {$XY$} chain in a transverse magnetic field.
+\newblock {\em Physical Review A}, 78:010306, 2008.
+
+\bibitem{Franchini2017}
+Fabio Franchini.
+\newblock {\em An Introduction to Integrable Techniques for One-Dimensional
+  Quantum Systems}, volume 940 of {\em Lecture Notes in Physics}.
+\newblock Springer, 2017.
+
+\bibitem{Katsura1962}
+Shigetoshi Katsura.
+\newblock Statistical mechanics of the anisotropic linear {Heisenberg} model.
+\newblock {\em Physical Review}, 127:1508--1518, 1962.
+
+\bibitem{AlMohy2011}
+Awad~H. {Al-Mohy} and Nicholas~J. Higham.
+\newblock Computing the action of the matrix exponential, with an application
+  to exponential integrators.
+\newblock {\em SIAM Journal on Scientific Computing}, 33:488--511, 2011.
+
+\bibitem{Virtanen2020}
+Pauli Virtanen et~al.
+\newblock {SciPy} 1.0: fundamental algorithms for scientific computing in
+  {Python}.
+\newblock {\em Nature Methods}, 17:261--272, 2020.
+
+\bibitem{Zunkovic2018}
+Bojan {\v{Z}}unkovi{\v{c}}, Markus Heyl, Michael Knap, and Alessandro Silva.
+\newblock Dynamical quantum phase transitions in spin chains with long-range
+  interactions: {Merging} different concepts of nonequilibrium criticality.
+\newblock {\em Physical Review Letters}, 120:130601, 2018.
+
+\end{thebibliography}

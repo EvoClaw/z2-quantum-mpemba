@@ -1,0 +1,126 @@
+%% sections/discussion.tex — Discussion
+%% Target: ≥400 words, covering mechanism, contrast with chaos, open questions
+\label{sec:discussion}
+
+\subsection{Physical mechanism}
+\label{sec:mechanism}
+
+The results presented above point to a coherent physical picture.
+At $t = 0$, the product initial state encodes all the information about Z2 symmetry
+breaking directly in its local structure: the EA $\DS_A(0;\theta) = \hbin((1+\cos^{\NA}\!\theta)/2)$
+is determined entirely by the initial polarisation angle and the subsystem size.
+The subsequent quench dynamics drives quasiparticle excitations across the chain,
+spreading correlations and washing out the memory of the initial state.
+The \emph{rate} at which this spreading restores Z2 symmetry in the subsystem
+depends on the distribution of quasiparticle modes that are activated by the quench —
+a distribution that is, in turn, sensitive to the initial state through the overlap
+between $|\psi_\theta\rangle$ and the eigenstates of the post-quench Hamiltonian.
+
+The key insight revealed by our systematic study is that a larger initial EA imbalance
+$|\Delta\Delta\mathcal{S}|$ produces a \emph{later} QME crossing, not an earlier one
+(Spearman $\rho = +0.90$).
+This is physically reasonable: a larger head start in EA requires more evolution for
+the more-broken state to "close the gap" and overtake the less-broken companion.
+The crossing time $\tM$ therefore encodes initial-state information through the
+imbalance in initial conditions, analogously to how the classical Mpemba effect
+encodes the initial temperature imbalance.
+However, the specific mechanism by which quasiparticle dynamics translates an initial
+EA imbalance into a crossing time — and in particular whether this can be captured by
+a perturbative argument at early times — remains an open analytical question.
+An early-time expansion of $\DS_A(t)$ around $t=0$ for the non-Gaussian product states
+studied here, analogous to the quasi-particle picture used for Gaussian states
+in Ref.~\cite{Rylands2024}, would provide a theoretical grounding for the
+empirical $\rho=+0.90$ correlation.
+
+\subsection{Contrast with chaotic dynamics}
+\label{sec:chaos}
+
+The present results complete a picture suggested by general arguments about
+chaotic dynamics.
+In random unitary circuits, Z2 QME is expected to be absent: rapid scrambling
+makes all initial states with the same $\langle Q_A\rangle$ relax the entanglement
+asymmetry at the same rate, regardless of the fine-grained structure of the initial
+state, because quasi-local conserved structures that distinguish different initial
+states are destroyed at short times.
+
+Our results show the opposite behaviour in integrable free-fermion chains: Z2 QME
+is \emph{universal}, occurring for every parameter combination tested.
+The integrability of the TFIM (and the XY chain family) ensures the existence of
+quasi-local conserved quantities whose overlap with the initial state persists
+throughout the dynamics.
+Different initial polarisation angles $\theta$ excite different quasi-particle
+mode distributions, and the resulting differential relaxation rates produce the
+Mpemba crossing.
+The contrast (chaotic $\to$ Z2 QME absent; integrable $\to$ Z2 QME universal)
+mirrors the known contrast for the classical Mpemba effect: the effect is associated
+with specific non-equilibrium initial conditions that are ``remembered'' by the dynamics.
+We conjecture that this dichotomy extends beyond the free-fermion case and constitutes
+a general feature of integrable versus chaotic symmetry-restoring dynamics.
+
+\subsection{Role of dynamical quantum phase transitions}
+\label{sec:dqpt_role}
+
+Dynamical quantum phase transitions are among the most prominent non-equilibrium
+phenomena in isolated quantum systems~\cite{Heyl2018}, and it was natural to hypothesise
+that they might organise the timing of Mpemba crossings.
+Our statistical analysis provides a nuanced answer to this question.
+
+DQPTs do imprint weakly on the EA dynamics: the distribution of fractional
+crossing positions $\phi$ is non-uniform (KS $p \approx 6 \times 10^{-25}$),
+with crossings tending to occur in the first half of each DQPT period
+($\bar\phi = 0.377$, peak at $\phi \approx 0.15$).
+This suggests that the DQPT periodicity modulates the \emph{envelope} of
+$\DS_A(t)$ oscillations — as the Loschmidt echo passes through successive
+minima, the EA curves of different initial states are differentially affected,
+preferentially enabling crossings in the rising phase of each Loschmidt oscillation
+rather than near the cusp.
+However, DQPTs do not \emph{trigger} crossings: there is no excess concentration
+near $\phi = 0.5$ (binary test $p = 0.27$), and QME occurs for all 23 post-quench
+fields tested including eight FM-phase fields where DQPTs are entirely absent.
+
+This finding clarifies which observables are and are not organised by DQPTs.
+While DQPTs manifest directly in the Loschmidt return rate~\cite{Heyl2013} and
+can influence two-point order-parameter correlators~\cite{Zunkovic2018},
+the EA crossing time $\tM$ is primarily a function of initial state geometry,
+placing it in a distinct universality class from DQPT-sensitive observables.
+
+\subsection{Open questions and outlook}
+\label{sec:outlook}
+
+Our work opens several directions for future investigation.
+
+\emph{Analytical theory.}
+A microscopic theory of $\tM$ for the non-Gaussian product states studied here
+would require extending the quasiparticle picture of EA dynamics~\cite{Rylands2024}
+to states that break fermion parity.
+The parity-sector mixing identified in Sec.~\ref{sec:quench} — the initial state
+being a coherent superposition of the even and odd sectors — may enable an
+analytical treatment via the Ramond/Neveu-Schwarz sector decomposition.
+Such a theory could explain both the $\rho = +0.90$ correlation and the
+$\phi \approx 0.15$ peak of the fractional-position distribution.
+
+\emph{Beyond free fermions.}
+The free-fermion structure of the TFIM and XY chain ensures exact solvability
+but restricts the scope of the results.
+Extending the analysis to interacting integrable systems (XXZ chain, Hubbard model)
+and to symmetry classes beyond Z2 (e.g.\ $\mathbb{Z}_N$ or $\mathrm{U}(1)$) would
+determine whether the Z2 QME universality observed here is specific to free-fermion
+dynamics or reflects a broader principle.
+
+\emph{Experimental realisations.}
+Transverse-field Ising chains are directly realised in superconducting qubit
+arrays~\cite{Bloch2008} and trapped-ion quantum simulators, with the ability to
+prepare product spin states of the form~\eqref{eq:psi0} and measure subsystem
+entanglement via quantum-state tomography.
+Our exact initial formula $\DS_A(0;\theta) = \hbin((1+\cos^{\NA}\!\theta)/2)$
+provides an unambiguous prediction for the pre-quench asymmetry, and the
+convergence of $\tM$ to a finite thermodynamic-limit value at $N \sim 14$
+makes the effect accessible at currently achievable system sizes.
+
+\emph{Mpemba effect engineering.}
+The strong $\rho = +0.90$ correlation between $|\Delta\Delta\mathcal{S}|$ and $\tM$
+suggests a practical handle: by tuning the initial polarisation angle, one can
+engineer the Z2 restoration time over nearly four orders of magnitude without changing
+any post-quench parameter.
+This tunability may find applications in quantum state-preparation protocols where
+the speed of symmetry restoration is a resource.

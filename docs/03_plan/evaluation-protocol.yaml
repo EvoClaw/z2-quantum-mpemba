@@ -1,0 +1,155 @@
+# Evaluation Protocol — Phase 3 Locked
+# Status: LOCKED (G2 pending user approval)
+
+project: "Z2 Quantum Mpemba Effect and Dynamical Quantum Phase Transitions"
+locked: false  # Set true only after user G2 approval
+
+# ── Primary Claims to Verify ──────────────────────────────────────────────────
+claims:
+  main: "Z2 QME occurs if and only if the quantum quench generates DQPTs in integrable 1D free-fermion systems"
+  sub_a: "QME phase boundary coincides with DQPT boundary in TFIM (10x10 phase diagram)"
+  sub_b: "Mpemba crossing time t_M diverges at DQPT boundary with power law t_M ~ (g_f - g_c)^{-alpha}"
+  sub_c: "QME follows DQPT, not QPT boundary (XY chain with decoupled DQPT/QPT)"
+  sub_d: "Physical mechanism: DQPT causes quasiparticle mode occupations to cross 1/2, enabling Z2 parity switching"
+
+# ── Observable Metrics (locked) ───────────────────────────────────────────────
+metrics:
+  primary:
+    - name: "Z2 Entanglement Asymmetry"
+      symbol: "DeltaS_A(t)"
+      definition: "S(rho_tilde_A) - S(rho_A) where rho_tilde_A = (rho_A + Q_A rho_A Q_A)/2"
+      Q_A: "product_{j in A} sigma^z_j = product (1 - 2n_j) = fermion parity"
+      computation: "Majorana covariance matrix — see analysis-framework.md"
+
+    - name: "Mpemba crossing time"
+      symbol: "t_M"
+      definition: "min{t > 0 : DeltaS_A(theta_1,t) = DeltaS_A(theta_2,t)} with DeltaS_A(theta_1,0) > DeltaS_A(theta_2,0)"
+
+  secondary:
+    - "Loschmidt echo rate g(t) — DQPT identification"
+    - "Loschmidt phase winding number — topological DQPT signature"
+    - "Renyi EA DeltaS_A^{(2)} — cross-check on S_pm computation"
+    - "Ordinary entanglement entropy S(rho_A) — Z2-specificity control"
+
+# ── QME Classification Rule (pre-registered) ─────────────────────────────────
+qme_classification:
+  present: "min_{t in (0, t_max]} [DeltaS_A(theta_1,t) - DeltaS_A(theta_2,t)] / |DeltaS_A(theta_1,0) - DeltaS_A(theta_2,0)| < -0.01"
+  absent: "All times show DeltaS_A(theta_1,t) >= DeltaS_A(theta_2,t)"
+  borderline: "Relative reversal 0-1%: flagged, extended time window applied"
+  excluded: "Pairs with initial EA gap |DeltaS_A(theta_1,0) - DeltaS_A(theta_2,0)| < 0.05"
+
+# ── Theta-pair Independence Outcome Criteria (pre-registered) ────────────────
+theta_independence:
+  test: "5x5 grid in (theta_1, theta_2) at 4 representative (g_i, g_f) points"
+  strong_confirmation: "QME present for >=90% of pairs in DQPT-crossing quenches AND absent for >=90% in non-DQPT"
+  weak_confirmation: "QME present for 60-89% — qualify claim as 'generically correlated'"
+  falsification: "QME present for ANY valid pair in non-DQPT quench — drop 'iff', revise to 'when DQPT'"
+
+# ── Time Window (N-dependent) ─────────────────────────────────────────────────
+time_window:
+  formula: "t_max(N) = max(60/J, 3*N_A/(4J))"
+  N_100: "60/J"
+  N_500: "60/J"
+  N_1000: "75/J"
+  N_2000: "150/J"
+  N_5000: "375/J"
+  dt_early: "0.02 for t in [0, 20/J]"
+  dt_late: "0.05 for t in [20/J, t_max]"
+  saturation_check: "EA within 1% of saturation value at t_max"
+
+# ── Parameter Grids ──────────────────────────────────────────────────────────
+parameter_grids:
+  TFIM_coarse:
+    model: "TFIM"
+    g_i: "[0.2, 0.4, 0.6, 0.8, 0.9, 1.1, 1.2, 1.5, 2.0, 3.0]"
+    g_f: "[0.2, 0.4, 0.6, 0.8, 0.9, 1.1, 1.2, 1.5, 2.0, 3.0]"
+    theta_pairs: "[(pi/4, pi/2), (pi/3, 2pi/3)]"
+    N: 1000
+    N_A: 100
+    purpose: "QME phase diagram"
+
+  TFIM_fine:
+    model: "TFIM"
+    g_range: "[0.5, 1.5] x [0.5, 1.5] (20x20)"
+    theta_pairs: "[(pi/4, pi/2), (pi/3, 2pi/3)]"
+    N: 1000
+    N_A: 100
+    purpose: "Boundary resolution near g_c=1"
+
+  theta_scan:
+    model: "TFIM"
+    theta_grid: "5x5 in [pi/8, 7pi/8]^2"
+    g_i_g_f_points: "4 representative: (0.5,1.5), (0.5,0.8), (0.3,2.0), (1.5,0.5)"
+    N: 1000
+    N_A: 100
+    purpose: "Theta-pair independence check"
+
+  critical_exponent:
+    model: "TFIM"
+    g_i: 0.5
+    g_f: "100 points in [1.001, 3.0], log-spaced near g_c"
+    theta_pairs: "[(pi/4, pi/2), (pi/3, 2pi/3), (pi/6, 5pi/6)]"
+    N: 1000
+    N_A: 100
+    purpose: "t_M ~ (g_f-1)^{-alpha} fit with AIC/BIC comparison"
+
+  XY_chain:
+    model: "XY"
+    gamma: "[0.3, 0.5, 0.7]"
+    h_grid: "8x8 in [0.2, 2.0]^2"
+    theta_pairs: "[(pi/4, pi/2), (pi/3, 2pi/3)]"
+    N: 1000
+    N_A: 100
+    purpose: "DQPT/QPT decoupling test"
+
+  finite_size:
+    model: "TFIM"
+    N: "[100, 200, 500, 1000, 2000, 5000]"
+    N_A: "N/10"
+    g_i_g_f: "6 representative parameter pairs"
+    purpose: "Finite-size scaling and thermodynamic limit"
+
+  N_A_sensitivity:
+    model: "TFIM"
+    N: 1000
+    N_A_over_N: "[0.05, 0.1, 0.15, 0.2]"
+    g_i_g_f: "4 representative pairs"
+    purpose: "N_A/N sensitivity check"
+
+# ── Validation Benchmarks ─────────────────────────────────────────────────────
+benchmarks:
+  - "DeltaS_A(t=0, theta, N_A) vs closed-form formula: <Q_A>=cos^{N_A}(theta), p_pm, S(rho_A)=N_A*h(sin^2(theta/2))"
+  - "DeltaS_A = 0 for theta=0 (Z2-symmetric initial state)"
+  - "S(rho_A) at g=1 (CFT): S = (1/6)log(N_A) + const, c=1/2"
+  - "Loschmidt echo: t* vs analytical TFIM Fisher zero formula"
+  - "Loschmidt phase winding number nu=1 for DQPT quench, nu=0 otherwise"
+  - "Renyi-2 EA: Z_2^{pm} = (1/2)[prod(1-2lambda+2lambda^2) pm prod(1-2lambda)]"
+  - "Small N_A exact diagonalization: N_A=4,6,8 -- all formulas vs full matrix calc"
+  - "Thermodynamic limit: Toeplitz + Szego theorem at N->inf"
+
+# ── Figure Plan ───────────────────────────────────────────────────────────────
+planned_figures:
+  Fig1: "QME phase diagram in TFIM (left) + DQPT boundary overlay (right) — main result"
+  Fig2: "Representative EA(t) and Loschmidt echo g(t) for DQPT-crossing vs. non-crossing quenches"
+  Fig3: "Critical scaling t_M ~ (g_f-1)^{-alpha} with power-law fit, AIC/BIC comparison"
+  Fig4: "XY chain: QME follows DQPT (not QPT) + finite-size scaling"
+  Supplemental: "Theta-pair independence, N_A sensitivity, analytical quasiparticle argument detail"
+
+# ── Critical Exponent Fitting Protocol ───────────────────────────────────────
+fitting_protocol:
+  model: "t_M = A * (g_f - 1)^{-alpha}"
+  comparison_model: "t_M = B * log(g_f - 1) + C"
+  g_c: "Fixed at 1.0 (analytical DQPT boundary); also fit freely and report consistency"
+  points: "100 dense points, log-spaced in g_f - 1 in [0.001, 2.0]"
+  fit_window_sensitivity: "Report alpha for 3 fitting windows: (0.1,2.0), (0.01,1.0), (0.001,0.5)"
+  censoring: "Points with t_M > t_max recorded as lower bounds; fit only uncensored points; verify censored points above fitted curve"
+  uncertainty: "Bootstrap resampling 1000 iterations; report alpha +/- sigma"
+  model_comparison: "AIC/BIC difference; Delta-AIC > 10 = decisive"
+  physical_prediction: "Predict alpha analytically from quasiparticle picture; compare to measurement"
+
+# ── Finite-N Extrapolation Protocol ──────────────────────────────────────────
+finite_N_protocol:
+  DQPT_boundary: "g_DQPT(N) = location of max curvature of Loschmidt rate at t*; fit g_DQPT(N) = g_c + a/N + b/N^2"
+  QME_boundary: "g_QME(N) = g_f where t_M -> inf; extrapolate via t_M(g_f, N) scaling"
+  test: "g_DQPT(inf) == g_QME(inf) ? Report both with error bars"
+

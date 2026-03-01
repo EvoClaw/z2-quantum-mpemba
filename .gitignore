@@ -1,0 +1,18 @@
+# Python cache
+src/__pycache__/
+*.pyc
+*.pyo
+
+# LaTeX auxiliary files
+paper/main.aux
+paper/main.log
+paper/main.blg
+paper/main.out
+paper/main.synctex.gz
+
+# Third-party papers (copyright)
+docs/02_literature/papers/
+
+# OS
+.DS_Store
+Thumbs.db

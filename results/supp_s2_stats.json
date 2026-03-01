@@ -1,0 +1,18 @@
+{
+  "n_pairs": 671,
+  "hit_rate": 0.38748137108792846,
+  "null_rate_theoretical": 0.4,
+  "delta_frac": 0.2,
+  "bootstrap_ci_95": [
+    0.3502235469448584,
+    0.4247391952309985
+  ],
+  "binomial_p_value": 0.26734207852289965,
+  "binomial_significant": false,
+  "ks_stat": 0.20387426051302915,
+  "ks_p_value": 6.247598243126491e-25,
+  "reject_uniformity": true,
+  "frac_peak_bin": 0.15000000000000002,
+  "frac_mean": 0.37736950062956265,
+  "conclusion": "Not statistically significant at p<0.05"
+}
