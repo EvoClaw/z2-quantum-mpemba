@@ -44,11 +44,13 @@ Figure~\ref{fig:phase_compare} shows the $\gf$-dependence of $\tM$.
 \begin{figure}[t]
   \centering
   \includegraphics[width=0.95\columnwidth]{../results/figs/fig3_gf_compare}
-  \caption{Crossing time $\tM$ versus post-quench field $\gf$ for three $\theta$-pairs
-    ($N = 14$, $\NA = 4$). The vertical dashed line marks the quantum critical point
-    $\gc = 0.5$. No DQPTs occur in the FM phase ($\gf < \gc$), yet QME is present
-    at all 23 tested fields. The crossing time evolves continuously through $\gc$
-    with no anomaly.}
+  \caption{Crossing time $\tM$ versus post-quench field $\gf$ for the
+    $\theta$-pair $(0.4,\,1.2)$ ($N = 14$, $\NA = 4$, 23 field values).
+    Green circles: FM phase ($\gf < \gc = 0.5$), no DQPTs detected.
+    Red squares: PM phase ($\gf > \gc$), DQPTs present.
+    QME crossings occur at every tested field; $\tM$ decreases monotonically
+    from the deep-FM regime and saturates near $4\,J^{-1}$ in the PM phase,
+    evolving continuously through $\gc$ with no anomaly.}
   \label{fig:phase_compare}
 \end{figure}
 
@@ -79,8 +81,11 @@ property of the initial state determines when the crossing happens?
 We assemble a dataset of $N_{\rm pairs} = 671$ initial-state pairs $(\theta_1, \theta_2)$,
 drawn from 39 uniformly spaced initial angles $\theta \in [0.1, 1.9]$, following
 a quench to $\gf = 2.0$ ($N = 12$, $\NA = 4$, PM phase with $T^* = \pi/(\gf-\gc) \approx 2.09\,J^{-1}$).
-All 671 pairs exhibit QME, with $\tM$ spanning the range $[0.003, 19.9]\,J^{-1}$
-— nearly four orders of magnitude controlled solely by the choice of initial angles.
+All 671 pairs exhibit QME.
+For pairs with $|\Delta\Delta\mathcal{S}| \geq 0.01$ (529 pairs), $\tM \in [0.33, 19.9]\,J^{-1}$
+(nearly two orders of magnitude); near-degenerate pairs ($|\Delta\Delta\mathcal{S}| < 0.01$)
+yield $\tM \approx 0$, as expected from near-identical initial states.
+In all cases the crossing time is controlled solely by the choice of initial angles.
 
 \begin{figure}[t]
   \centering
@@ -88,8 +93,9 @@ All 671 pairs exhibit QME, with $\tM$ spanning the range $[0.003, 19.9]\,J^{-1}$
   \caption{Crossing time $\tM$ versus initial EA imbalance $|\Delta\Delta\mathcal{S}|$
     for all 671 $\theta$-pairs ($N=12$, $\gf=2.0$, $\NA=4$). Spearman $\rho=+0.90$
     ($p\approx 3\times10^{-240}$). The near-linear trend on these axes demonstrates
-    that the initial state geometry is the primary predictor of $\tM$; pairs span
-    nearly four orders of magnitude in crossing time.}
+    that the initial state geometry is the primary predictor of $\tM$;
+    pairs with $|\Delta\Delta\mathcal{S}|\geq 0.01$ span nearly two orders of
+    magnitude in crossing time.}
   \label{fig:scatter}
 \end{figure}
 

@@ -137,8 +137,11 @@ equilibrate to a cooler environment faster than a less hot one~\cite{Mpemba1969}
 \emph{more broken} initial state restores symmetry \emph{faster}, crossing the less
 broken state in EA at $\tM$.
 We define $\tM$ as the earliest such crossing and detect it by linear interpolation
-between time steps. Pairs with initial EA gap $|\DS_A(\theta_1,0) - \DS_A(\theta_2,0)|
-< 0.05$ are excluded as insufficiently distinguished.
+between time steps. All pairs satisfying $\theta_1 < \theta_2$ and
+$\DS_A(\theta_1,0) < \DS_A(\theta_2,0)$ for which a crossing is detected are
+retained; pairs with near-identical initial angles (gap $\lesssim 0.01$) produce
+crossings at $\tM \approx 0$, reflecting numerical noise rather than genuine
+symmetry restoration, and are noted where relevant.
 
 \subsection{Dynamical quantum phase transitions}
 \label{sec:DQPT}
@@ -150,15 +153,21 @@ non-analytic cusps in the Loschmidt return rate
   \mathcal{L}(t) = \langle\psi_\theta|e^{-iH(\gf)t}|\psi_\theta\rangle.
   \label{eq:losch}
 \end{equation}
-For quenches into the paramagnetic phase ($\gf > \gc$), the return rate develops cusps at
+For ground-state quenches across the critical point into the paramagnetic phase
+($\gf > \gc$), the return rate develops cusps at
 times $t_n^* = (2n+1)T^*/2$, $n = 0, 1, 2, \ldots$, where the DQPT period
 is~\cite{Heyl2013}
 \begin{equation}
   T^* = \frac{\pi}{\gf - \gc}.
   \label{eq:Tstar}
 \end{equation}
-In finite systems, we identify DQPTs as prominent local maxima of $f(t)$ exceeding a
-threshold $f > 0.05$.
+This formula is derived for initial states that are ground states of $H(g_i)$ with
+$g_i < g_c$; for the product-state initial conditions used here, it provides an
+approximate reference scale tied to the gap $\Delta = 2(\gf - \gc)$, but the
+actual cusp spacing may differ.
+In finite systems, we identify DQPTs numerically as prominent local maxima of $f(t)$
+exceeding a threshold $f > 0.05$, and note that finite-size effects can produce
+spurious peaks even for FM-phase quenches at small $N$.
 To characterize the relationship between QME crossings and the DQPT structure, we
 introduce the \emph{fractional crossing time}
 \begin{equation}
