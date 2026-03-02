@@ -140,8 +140,8 @@ t_arr = np.linspace(0, t_max, n_t)
 # Test anisotropy values
 gammas     = [0.0, 0.25, 0.5, 0.75, 1.0]
 gamma_names= ['TFIM','γ=0.25','γ=0.5','γ=0.75','XX']
-# g_c(gamma) = J*sqrt(1-gamma)/2
-g_c_list   = [0.5*np.sqrt(1-gm) for gm in gammas]
+# g_c = J/2 = 0.5 for all gamma in [0,1) (BdG analysis: gap closes at k=0 for any pairing)
+g_c_list   = [0.5] * len(gammas)
 g_f        = 2.0   # fixed post-quench field (well above all g_c values)
 # Also test g_f = 0.42: above g_c for gamma=0.25,0.5,0.75,XX but below TFIM g_c=0.5
 # This decouples QPT from DQPT occurrence
